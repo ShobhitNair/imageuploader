@@ -11,8 +11,8 @@ function App() {
     formdata.append("file", file);
 
     try {
-      await axios.post("http://localhost:3001/upload", formdata);
-      const response = await axios.get("http://localhost:3001/getImage");
+      await axios.post("https://imageuploader-server.vercel.app/upload", formdata);
+      const response = await axios.get("https://imageuploader-server.vercel.app/getImage");
       setImages(response.data.map((item) => item.image));
     } catch (error) {
       console.log(error);
@@ -20,7 +20,7 @@ function App() {
   };
   useEffect(() => {
     axios
-      .get("http://localhost:3001/getImage")
+      .get("https://imageuploader-server.vercel.app/getImage")
       .then((res) => setImages(res.data.map((item) => item.image)))
       .catch((err) => console.log(err));
   }, []);
@@ -49,7 +49,7 @@ function App() {
             <img
               className="w-48 h-48 m-2 p-1"
               key={index}
-              src={"http://localhost:3001/Images/" + image}
+              src={"https://imageuploader-server.vercel.app/Images/" + image}
               alt={`image_${index}`}
             />
           ))}

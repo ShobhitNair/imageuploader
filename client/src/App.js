@@ -13,9 +13,7 @@ function App() {
 
     try {
       await axios.post("https://imageuploader-server.vercel.app/upload", formdata);
-      const response = await axios.get("https://imageuploader-server.vercel.app/getImage");
-      setImages(response.map((item) => item.image));
-      console.log(response.data)
+
     } catch (error) {
       console.log(error);
     }

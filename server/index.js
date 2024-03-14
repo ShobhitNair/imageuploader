@@ -9,9 +9,10 @@ const UserModel = require('./models/User')
 
 const app = express();
 const corsOptions = {
-  origin: 'https://imageuploader-client.vercel.app',
+  origin: ['https://imageuploader-client.vercel.app'],
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
 };
 app.use(cors(corsOptions));
 dotenv.config();

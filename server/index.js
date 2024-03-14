@@ -8,7 +8,12 @@ const UserModel = require('./models/User')
 
 
 const app = express();
-app.use(cors())
+const corsOptions = {
+  origin: 'https://imageuploader-client.vercel.app',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+};
+app.use(cors(corsOptions));
 dotenv.config();
 app.use(express.json())
 app.use(express.static('public'))

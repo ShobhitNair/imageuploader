@@ -31,6 +31,9 @@ const storage = multer.diskStorage({
 const upload = multer({
     storage: storage
 })
+app.get('/', (req,res)=>{
+    res.json('hello')
+})
 
 app.post('/upload',upload.single('file'),(req,res)=>{
         UserModel.create({image: req.file.filename})

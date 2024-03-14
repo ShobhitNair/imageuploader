@@ -5,6 +5,7 @@ import axios from "axios";
 function App() {
   const [file, setFile] = useState();
   const [images, setImages] = useState([]);
+  axios.defaults.withCredentials = true;
   const handleUpload = async (e) => {
     e.preventDefault();
     const formdata = new FormData();

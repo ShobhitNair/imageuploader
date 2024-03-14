@@ -49,7 +49,7 @@ function App() {
             <img
               className="w-48 h-48 m-2 p-1"
               key={index}
-              src={"https://imageuploader-server.vercel.app/Images/" + image}
+              src={`https://imageuploader-server.vercel.app/Images/${image}`}
               alt={`image_${index}`}
             />
           ))}
